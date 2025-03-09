@@ -53,14 +53,21 @@ const store = inputPreviewStore();
                 </div>
 
                 <!-- OBJETIVOS -->
-                <div v-if="store.form.objetivo" class="flex flex-col gap-2 mt-5">
+                <div v-if="store.form.objetivo" class="flex flex-col gap-2 mb-2 mt-5">
                     <h1 class="font-medium text-xl">Objetivo</h1>
                     <hr />
                     <p> {{ store.form.objetivo }} </p>
                 </div>
 
+                <!-- HABILIDADES -->
+                <div v-if="store.form.habilidades" class="flex flex-col gap-2 mb-2 mt-5">
+                    <h1 class="font-medium text-xl">Habilidades</h1>
+                    <hr />
+                    <p> {{ store.form.habilidades }} </p>
+                </div>
+
                 <!-- FORMAÇÃO ACADEMICA -->
-                <div v-if="store.form.instituicao" class="flex flex-col gap-2 mt-5">
+                <div v-if="store.form.instituicao" class="flex flex-col gap-2 mb-2 mt-5">
                     <h1 class="font-medium text-xl">Formação Acadêmica</h1>
                     <hr />
                     <div class="flex gap-4">
@@ -70,7 +77,7 @@ const store = inputPreviewStore();
                 </div>
 
                 <!-- CERTIFICAÇÕES -->
-                <div v-if="store.form.instituicaoCertificacao" class="flex flex-col gap-2 mt-5">
+                <div v-if="store.form.instituicaoCertificacao" class="flex flex-col gap-2 mb-2 mt-5">
                     <h1 class="font-medium text-xl">Certificações</h1>
                     <hr />
                     <div class="flex gap-4">

@@ -22,6 +22,14 @@ const getMunicipios = async (sigla) => {
     municipios.value = municipios.value.map(element => element.nome)
 }
 
+function formSubmit(){
+    try {
+        dowloadPdf();
+    } catch {
+        alert("Error: não foi possivel gerar o pdf, por favor tente novamente!");
+    }
+}
+
 getEstado();
 
 </script>
@@ -29,7 +37,7 @@ getEstado();
 <template>
     <section class="h-screen px-5 lg:p-5 break-words whitespace-normal lg:text-base ">
         
-        <form @submit.prevent action="" method="POST">
+        <form @submit.prevent="formSubmit" method="POST">
 
             <!-- DADOS PESSOAIS -->
             <div class="grid grid-cols-12 gap-x-4 gap-y-3 lg:gap-x-2 mb-4">
@@ -39,12 +47,12 @@ getEstado();
                 <div class="lg:ml-4 col-span-12">
                     <Label :label="'Nome completo:'" />
 
-                    <Input NomeInput="nome" name="nome" />
+                    <Input NomeInput="nome" name="nome" required/>
                 </div>
 
                 <div class="lg:ml-4 col-span-6 sm:col-span-4">
                     <Label :label="'Nacionalidade:'" />
-                    <Input NomeInput="nacionalidade" name="nacionalidade" />
+                    <Input NomeInput="nacionalidade" name="nacionalidade" required/>
                 </div>
 
                 <div class="lg:ml-4 col-span-6 sm:col-span-4">
@@ -59,12 +67,12 @@ getEstado();
 
                 <div class="lg:ml-4 col-span-6 sm:col-span-6">
                     <Label :label="'Estado Civil:'" />
-                    <InputSelect NomeInput="estadoCivil" name="estadoCivil" :list="estadoCivil" />
+                    <InputSelect NomeInput="estadoCivil" name="estadoCivil" :list="estadoCivil" required/>
                 </div>
 
                 <div class="lg:ml-4 col-span-6">
                     <Label :label="'Endereço:'" />
-                    <Input NomeInput="endereco" name="endereco" />
+                    <Input NomeInput="endereco" name="endereco" required/>
                 </div>
 
                 <div class="lg:ml-4 col-span-6">
@@ -100,9 +108,19 @@ getEstado();
                 </div>
             </div>
 
+            <!-- HABILIDADES -->
+            <div class="flex flex-col gap-2 mb-4">
+                <h1 class="text-xl font-bold text-gray-700">3. Habilidades</h1>
+
+                <div class="lg:ml-4">
+                    <Label :label="'Habilidades:'" />
+                    <Input NomeInput="habilidades" name="habilidades" placeholder="JAVA | VUE | UX | UI" />
+                </div>
+            </div>
+
              <!-- FORMAÇÃO ACADÊMICA -->
             <div class="grid grid-cols-12 gap-2 mb-4">
-                <h1 class="text-xl font-bold text-gray-700 col-span-12">3. Formação Acadêmica</h1>
+                <h1 class="text-xl font-bold text-gray-700 col-span-12">4. Formação Acadêmica</h1>
 
                 <div class="lg:ml-4 col-span-12 sm:col-span-6">
                     <Label :label="'Instituição de Ensino:'" />
@@ -128,7 +146,7 @@ getEstado();
             
             <!-- CERTIFICAÇÕES  -->
             <div class="grid grid-cols-12 gap-2 mb-4">
-                <h1 class="text-xl font-bold text-gray-700 col-span-12">4. Certificações</h1>
+                <h1 class="text-xl font-bold text-gray-700 col-span-12">5. Certificações</h1>
                 
                 <div class="lg:ml-4 col-span-12 sm:col-span-6">
                     <Label :label="'Instituição de Ensino:'" />
@@ -154,7 +172,7 @@ getEstado();
             <!-- Experiência Profissional -->
             <div class="grid grid-cols-12 gap-2 ">
 
-                <h1 class="text-xl font-bold text-gray-700 col-span-12">5. Experiência Profissional</h1>
+                <h1 class="text-xl font-bold text-gray-700 col-span-12">6. Experiência Profissional</h1>
 
                 <div class="lg:ml-4 col-span-12">
                     <Label :label="'Nome da empresa:'" />
@@ -178,7 +196,7 @@ getEstado();
 
             </div>
 
-            <button class="p-2 w-full bg-red-500 font-semibold text-white rounded-md mb-10" @click="dowloadPdf()">DOWLOAD PDF NOW</button>
+            <button class="p-2 w-full bg-red-500 font-semibold text-white rounded-md mb-10" type="submit">DOWLOAD PDF NOW</button>
 
         </form>
 

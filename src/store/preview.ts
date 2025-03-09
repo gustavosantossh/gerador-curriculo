@@ -19,6 +19,9 @@ export const inputPreviewStore = defineStore("preview", () => {
     // Objetivo
     objetivo: '',
 
+    // HABILIDADES
+    habilidades: '',
+
     // Formação
     curso: '',
     instituicao: '',

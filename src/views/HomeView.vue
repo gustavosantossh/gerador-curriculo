@@ -7,8 +7,8 @@ import LoadPdf from "../components/LoadPdf.vue";
 </script>
 
 <template>
-  <main class="h-screen max-w-screen grid lg:grid lg:grid-rows-2 lg:grid-cols-2">
-    <section class="h-screen overflow-auto order-1">
+  <main class="h-screen max-w-screen lg:grid lg:grid-rows-2 lg:grid-cols-2">
+    <section class="h-screen overflow-auto">
       <Form />
     </section>
 
