@@ -1,5 +1,3 @@
-import { ref } from "vue";
-
 export const estadoCivil = [
   "Solteiro(a)",
   "Casado(a)",
@@ -33,5 +31,3 @@ export const BrasilApiGetMunicipios = async (siglaUF: string) => {
     return data;
   } catch {}
 };
-
-// https://brasilapi.com.br/api/ibge/municipios/v1/{siglaUF}?providers=dados-abertos-br,gov,wikipedia

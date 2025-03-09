@@ -49,8 +49,5 @@ export const inputPreviewStore = defineStore("preview", () => {
     form.value[field] = newValue;
   };
 
-  // getter
-   
-
   return { form, updateForm };
 });

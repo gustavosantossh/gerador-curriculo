@@ -1,5 +1,4 @@
 <script setup>
-import { vAutoAnimate } from '@formkit/auto-animate';
 import { dowloadPdf } from '@/services/html2pdfService';
 import LoadPdf from './LoadPdf.vue';
 import { BrasilApi, BrasilApiGetMunicipios, estadoCivil, cursoConclusaoStatus } from '@/data/options';
@@ -7,7 +6,6 @@ import Input from './form/Input.vue';
 import InputSelect from './form/InputSelect.vue';
 import Label from './form/Label.vue';
 import { ref } from 'vue';
-
 
 const estados = ref([]);
 const municipios = ref([]);
@@ -88,12 +86,12 @@ getEstado();
 
                 <div class="lg:ml-4 col-span-6">
                     <Label :label="'Telefone:'" />
-                    <Input NomeInput="telefone" name="telefone" maxlength="20" />
+                    <Input NomeInput="telefone" name="telefone" maxlength="20" placeholder="00 0 0000-0000" />
                 </div>
 
                 <div class="lg:ml-4 col-span-12 sm:col-span-6">
                     <Label :label="'Email:'" />
-                    <Input type="email" NomeInput="email" name="email" maxlength="50" />
+                    <Input type="email" NomeInput="email" name="email" maxlength="50" placeholder="example@gmail.com" />
                 </div>
 
             </div>
