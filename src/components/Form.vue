@@ -194,7 +194,7 @@ getEstado();
 
             </div>
 
-            <button class="p-2 w-full bg-red-500 font-semibold text-white rounded-md mb-10" type="submit">DOWLOAD PDF NOW</button>
+            <button class="p-2 w-full bg-red-500 font-semibold text-white rounded-md mb-10" type="submit">DOWNLOAD PDF NOW</button>
 
         </form>
 
