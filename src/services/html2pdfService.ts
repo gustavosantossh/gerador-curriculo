@@ -16,5 +16,7 @@ export function dowloadPdf() {
     html2canvas: { scale: 2 },
     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
   };
+
   html2pdf().set(opt).from(conteudo).save();
+  
 }
